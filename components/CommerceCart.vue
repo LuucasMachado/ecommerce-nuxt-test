@@ -8,7 +8,6 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from 'vuex'
 import CommerceCartEmpty from './CommerceCartEmpty'
 import CommerceCartList from './CommerceCartList'
 
@@ -26,20 +25,21 @@ export default {
 </script>
 
 <style lang="scss">
-  .d-flex {
-    display: flex;
-  }
-  .shopping-cart {
-    width: 20%;
-    border: 1px solid #E1E1E1;
-    padding: 20px;
-    height: min-content;
+.d-flex {
+  display: flex;
+}
 
-  }
-  .empty-products {
-    height: 70%;
-  }
+.shopping-cart {
+  width: 20%;
+  border: 1px solid #E1E1E1;
+  padding: 20px;
+  height: min-content;
 
-  .shopping-cart-body {
-  }
+}
+
+.empty-products {
+  height: 70%;
+}
+
+.shopping-cart-body {}
 </style>
