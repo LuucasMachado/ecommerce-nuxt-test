@@ -6,21 +6,31 @@ export const state = {
 }
 
 export const actions = {
-  async nuxtServerInit({ commit }) {
+  async nuxtServerInit({
+    commit
+  }) {
     commit('setProducts', productsJson)
   },
-  addProductToCart({ commit }, product) {
+  addProductToCart({
+    commit
+  }, product) {
     const slicedProduct = product
     commit('addProductToCart', slicedProduct)
   },
-  removeProductToCart({ commit }, product) {
+  removeProductToCart({
+    commit
+  }, product) {
     const slicedProduct = product
     commit('removeProductToCart', slicedProduct)
   },
-  orderByAlphabetical({ commit }) {
+  orderByAlphabetical({
+    commit
+  }) {
     commit('orderByAlphabetical')
   },
-  orderByScore({ commit }) {
+  orderByScore({
+    commit
+  }) {
     commit('orderByScore')
   },
 }
@@ -31,7 +41,6 @@ export const mutations = {
   },
   addProductToCart(state, product) {
     state.cart.push(product)
-    console.log(state.cart)
   },
   removeProductToCart(state, product) {
     state.cart.splice(state.cart.indexOf(product), 1)
@@ -51,4 +60,26 @@ export const getters = {
   cart(state) {
     return state.cart
   },
+  cartSubtotal(state) {
+    return state.cart.reduce((a, b) => +a + +b.price, 0).toFixed(2);
+  },
+  cartFrete(state) {
+    let subtotal = state.cart.reduce((a, b) => +a + +b.price, 0).toFixed(2);
+    if (subtotal < 250.00) {
+      return state.cart.length * 10;
+    } else {
+      return 0.00
+    }
+  },
+  cartTotal(state) {
+    let subtotal = state.cart.reduce((a, b) => +a + +b.price, 0).toFixed(2);
+    let frete = 0;
+    if (subtotal < 250.00) {
+      frete = state.cart.length * 10;
+    } else {
+      frete = 0.00
+    }
+
+    return parseFloat(subtotal) + frete;
+  }
 }

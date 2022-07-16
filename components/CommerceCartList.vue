@@ -27,28 +27,35 @@
     <div class="cart-totals-content">
       <div class="total-line">
         <p class="total-labels">subtotal</p>
-        <p class="total-labels-subtotal">R$ 315,37</p>
+        <p class="total-labels-subtotal">R$ {{ subtotal }}</p>
       </div>
       <div class="total-line">
         <p class="total-labels">frete</p>
-        <p class="total-labels-frete">R$ 315,37</p>
+        <p class="total-labels-frete">R$ {{ freteTotal }}</p>
       </div>
       <div class="total-line">
         <p class="total-labels">total</p>
-        <p class="total-labels-total">R$ 315,37</p>
+        <p class="total-labels-total">R$ {{ total }}</p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { mapState, mapGetters } from 'vuex'
-import CommerceCartEmpty from './CommerceCartEmpty'
+import { mapState, mapGetters } from 'vuex';
 
 export default {
   name: 'CartView',
   props: {
     cart: [],
+  },
+  computed: {
+    ...mapGetters({
+      subtotal: 'cartSubtotal',
+      freteTotal: 'cartFrete',
+      total: 'cartTotal',
+    }),
+
   },
   methods: {
     removeToCart(product) {
