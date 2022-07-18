@@ -14,7 +14,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 60px;
   }
+
   h2 {
     margin: 0px 0px 20px 0px;
   }

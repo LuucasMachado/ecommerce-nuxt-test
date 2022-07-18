@@ -31,6 +31,9 @@ export default {
 
 .shopping-cart {
   width: 20%;
+  @media screen and (max-width: 480px) {
+    width: 50%;
+  }
   border: 1px solid #E1E1E1;
   padding: 20px;
   height: min-content;

@@ -15,7 +15,7 @@
           </div>
           <div class="card-price">
             <span class="content-price">
-              R$ {{ product.price }}
+              R$ {{ normalizePtValues(product.price) }}
             </span>
           </div>
         </div>
@@ -27,16 +27,19 @@
     <div class="cart-totals-content">
       <div class="total-line">
         <p class="total-labels">subtotal</p>
-        <p class="total-labels-subtotal">R$ {{ subtotal }}</p>
+        <p class="total-labels-subtotal">R$ {{ normalizePtValues(subtotal) }}</p>
       </div>
       <div class="total-line">
         <p class="total-labels">frete</p>
-        <p class="total-labels-frete">R$ {{ freteTotal }}</p>
+        <p class="total-labels-frete">R$ {{ normalizePtValues(freteTotal) }}</p>
       </div>
       <div class="total-line">
         <p class="total-labels">total</p>
-        <p class="total-labels-total">R$ {{ total }}</p>
+        <p class="total-labels-total">R$ {{ normalizePtValues(total) }}</p>
       </div>
+    </div>
+    <div>
+      <button class="btn-submit">Finalizar compra</button>
     </div>
   </div>
 </template>
@@ -60,12 +63,27 @@ export default {
   methods: {
     removeToCart(product) {
       this.$store.dispatch("removeProductToCart", product);
+    },
+    normalizePtValues(value) {
+      return String(value).replace(".", ",");
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.btn-submit {
+  width: 100%;
+  height: 50px;
+  font-size: 19px;
+  font-weight: bold;
+  color: white;
+  background: #54A3FF;
+  border-radius: 3px;
+  opacity: 1;
+  border: none;
+  margin: 25px auto;
+}
 .d-flex {
   display: flex;
   align-items: center;

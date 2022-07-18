@@ -16,7 +16,7 @@
           <div class="card-title">{{product.name}}</div>
           <div class="card-price">
             <span class="content-price">
-              R$ {{product.price}}
+              R$ {{normalizePtValues(product.price)}}
             </span>
             <span class="content-adc"><a>Adicionar ao carrinho</a></span>
           </div>
@@ -42,6 +42,9 @@ export default {
       }else if(value === 'popular') {
         this.$store.dispatch("orderByScore");
       }
+    },
+    normalizePtValues(value) {
+      return String(value).replace(".", ",");
     }
   },
 }
@@ -60,6 +63,7 @@ export default {
     align-items: flex-start;
     justify-content: space-between;
     margin-right: 6%;
+    margin-bottom: 40px;
   }
 
   .title-products-list {
@@ -69,10 +73,15 @@ export default {
     color: #363636;
     margin: 0px;
     text-align: left;
+    line-height: 90%;
   }
 
   .product-list {
     width: 70%;
+    @media screen and (max-width: 480px) {
+      width: 100%;
+    }
+
   }
 
   .contents {
@@ -120,7 +129,7 @@ export default {
     text-align: center;
   }
   .card-img {
-    margin: 0 auto;
+    margin: 25px auto;
   }
   .content-adc {
     display: none;
