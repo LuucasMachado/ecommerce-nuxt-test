@@ -13,9 +13,7 @@
           <div class="card-box-img">
             <img :src="require(`@/assets/${product.image}`)" :alt="product.name" class="card-img">
           </div>
-          <div class="card-title">
-            {{product.name}}
-          </div>
+          <div class="card-title">{{product.name}}</div>
           <div class="card-price">
             <span class="content-price">
               R$ {{product.price}}
