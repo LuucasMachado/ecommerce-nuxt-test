@@ -78,7 +78,7 @@ export default {
 
   .product-list {
     width: 70%;
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 675px) {
       width: 100%;
     }
 
