@@ -60,12 +60,14 @@ export default {
     width: 262px;
     // height: 40px;
     font-size: 19px;
+    margin-left: 10px;
   }
   .title-content {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     margin-bottom: 40px;
+    flex-wrap: wrap;
   }
 
   .title-products-list {

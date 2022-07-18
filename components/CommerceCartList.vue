@@ -82,10 +82,19 @@ export default {
   border: none;
   margin: 22px 0px auto 0px;
   padding: 15px 43px;
+  @media screen and (max-width: 1393px) {
+    padding: 15px 23px;
+    font-size: 14px;
+  }
+  @media screen and (max-width: 675px) {
+    padding: 15px 23px;
+    font-size: 12px;
+  }
 }
 .d-flex {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 
   p {
     margin: 0px 0px 20px 4px;
@@ -93,6 +102,12 @@ export default {
     letter-spacing: 0px;
     color: #7F7575;
     opacity: 1;
+    @media screen and (max-width: 1393px) {
+      font-size: 14px;
+    }
+    @media screen and (max-width: 675px) {
+      font-size: 12px;
+    }
   }
 }
 
@@ -115,6 +130,12 @@ export default {
     color: #423B3B;
     opacity: 1;
     margin: 9px 0px;
+    @media screen and (max-width: 1393px) {
+      font-size: 16px;
+    }
+    @media screen and (max-width: 675px) {
+      font-size: 16px;
+    }
   }
 
   &-subtotal {
@@ -125,6 +146,12 @@ export default {
     color: #423B3B;
     opacity: 1;
     margin: 9px 0px;
+    @media screen and (max-width: 1393px) {
+      font-size: 16px;
+    }
+    @media screen and (max-width: 675px) {
+      font-size: 16px;
+    }
   }
 
   &-total {
@@ -134,6 +161,12 @@ export default {
     color: #423B3B;
     opacity: 1;
     margin: 9px 0px;
+    @media screen and (max-width: 1393px) {
+      font-size: 20px;
+    }
+    @media screen and (max-width: 675px) {
+      font-size: 20px;
+    }
   }
 
 }
