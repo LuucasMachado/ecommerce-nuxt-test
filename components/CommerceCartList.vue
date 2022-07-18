@@ -38,9 +38,7 @@
         <p class="total-labels-total">R$ {{ normalizePtValues(total) }}</p>
       </div>
     </div>
-    <div>
-      <button class="btn-submit">Finalizar compra</button>
-    </div>
+    <button class="btn-submit">Finalizar compra</button>
   </div>
 </template>
 
@@ -82,7 +80,8 @@ export default {
   border-radius: 3px;
   opacity: 1;
   border: none;
-  margin: 25px auto;
+  margin: 22px 0px auto 0px;
+  padding: 15px 43px;
 }
 .d-flex {
   display: flex;
@@ -107,6 +106,7 @@ export default {
   letter-spacing: 0px;
   color: #7F7575;
   opacity: 1;
+  margin: 9px 0px;
 
   &-frete {
     font-weight: bold;
@@ -114,6 +114,7 @@ export default {
     letter-spacing: 0px;
     color: #423B3B;
     opacity: 1;
+    margin: 9px 0px;
   }
 
   &-subtotal {
@@ -123,6 +124,7 @@ export default {
     letter-spacing: 0px;
     color: #423B3B;
     opacity: 1;
+    margin: 9px 0px;
   }
 
   &-total {
@@ -131,6 +133,7 @@ export default {
     letter-spacing: 0px;
     color: #423B3B;
     opacity: 1;
+    margin: 9px 0px;
   }
 
 }
@@ -161,6 +164,9 @@ h1 {
 
 .product-list {
   width: 70%;
+  @media screen and (max-width: 1393px) {
+    width: 80%;
+  }
 }
 
 .contents {

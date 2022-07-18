@@ -57,12 +57,14 @@ export default {
     border-radius: 4px;
     opacity: 1;
     padding: 12px 100px 12px 12px;
+    width: 262px;
+    // height: 40px;
+    font-size: 19px;
   }
   .title-content {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    margin-right: 6%;
     margin-bottom: 40px;
   }
 
@@ -78,6 +80,9 @@ export default {
 
   .product-list {
     width: 70%;
+    @media screen and (max-width: 1393px) {
+      width: 80%;
+    }
     @media screen and (max-width: 675px) {
       width: 100%;
     }

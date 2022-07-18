@@ -31,6 +31,10 @@ export default {
 
 .shopping-cart {
   width: 20%;
+  @media screen and (max-width: 1393px) {
+    width: 15%;
+    margin-left: 20px;
+  }
   @media screen and (max-width: 675px) {
     width: 80%;
     margin-top: 20px;
@@ -45,5 +49,4 @@ export default {
   height: 70%;
 }
 
-.shopping-cart-body {}
 </style>
